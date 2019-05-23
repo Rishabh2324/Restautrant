@@ -14,13 +14,17 @@ import {MatButtonModule} from '@angular/material/button';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component'
 import {MatListModule} from '@angular/material/list';
 import {DishService} from './services/dish.service';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    DishdetailsComponent
+    DishdetailsComponent,
+    HeaderComponent,
+    FooterComponent
    ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import {DishService} from './services/dish.service';
     FlexLayoutModule,
     MatGridListModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    AngularFontAwesomeModule
 
   ],
   providers: [
