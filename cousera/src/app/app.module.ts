@@ -14,7 +14,6 @@ import {MatButtonModule} from '@angular/material/button';
 import { DishdetailsComponent } from './dishdetails/dishdetails.component'
 import {MatListModule} from '@angular/material/list';
 import {DishService} from './services/dish.service';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -36,8 +35,6 @@ import { FooterComponent } from './footer/footer.component';
     MatGridListModule,
     MatCardModule,
     MatListModule,
-    AngularFontAwesomeModule
-
   ],
   providers: [
     DishService
