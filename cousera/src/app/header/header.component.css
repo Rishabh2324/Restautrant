@@ -1,12 +1,12 @@
 .header{ background-color : paleturquoise;}
 .jumbotron {
-    margin :70px,30px ;
-    background:rgb(54, 54, 83);
-    color:floralwhite;
-    min-height: 150px;
     margin: 0px auto;
-    padding: 25px; 
-           }
+    padding: 70px 30px;
+    background: #9575cd;
+    color: floralwhite;
+    min-height: 150px;
+}
+
 
 .active {
     background-color:#4527A0; 
