@@ -58,19 +58,19 @@
 
   <div fxFlex>
     <h2>Corporate Leadership</h2>
-    <div fxFlex>
-      <mat-list cols="1" rowHeight="400px">
-        <mat-list-item *ngFor="let leader of leaders">
-          <img matListAvatar src={{leader.image}} alt={{leader.name}}>
 
-          <h1 matLine>{{leader.name |uppercase}}</h1>
-          <p matLine>
-            <span>{{leader.description}}</span>
-          </p>
+    <mat-list cols="1" rowHeight="400px">
+      <mat-list-item *ngFor="let leader of leaders">
+        <img matListAvatar src={{leader.image}} alt={{leader.name}}>
 
-        </mat-list-item>
-      </mat-list>
+        <h1 matLine>{{leader.name | uppercase}}</h1>
+        <p matLine>
+          <span>{{leader.description}}</span>
+        </p>
 
-    </div>
+      </mat-list-item>
+    </mat-list>
+
+
   </div>
 </div>
