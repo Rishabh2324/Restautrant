@@ -1,39 +1,42 @@
-<div class="container"
-    fxLayout="row"
-    fxLayout.sm="column"
-    fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
-    fxLayoutGap="10px" 
-    fxLayoutGap.xs="0">
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
+  fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
 
   <div fxFlex="40">
-    
+
     <mat-card *ngIf="dish">
-        <mat-card-title>{{dish.name | uppercase}}</mat-card-title>
-        <img mat-card-image src={{dish.image}}>
-        <mat-card-content>{{dish.description}}</mat-card-content>
-        <mat-card-actions>
-            <button mat-button (click)="goBack()">BACK</button>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-     </mat-card>
+      <mat-card-title>{{dish.name | uppercase}}</mat-card-title>
+      <img mat-card-image src={{dish.image}}>
+      <mat-card-content>{{dish.description}}</mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="goBack()">BACK</button>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+    <div fxFlex [hidden]="dish">
+      <mat-spinner></mat-spinner>
+      <h4>Loading .............Please Wait</h4>
+    </div>
   </div>
 
   <div fxFlex="40">
-    
-    
+
+
     <mat-list *ngIf="dish">
-        <mat-card-title>Comments</mat-card-title>
-       <mat-list-item *ngFor="let comment of dish.comments">
-         <h4 matLine>{{comment.comment}}</h4>
-         <p matLine>{{comment.rating}} Stars</p>
-         <p matLine>--{{comment.author}} {{comment.date }}</p>
-       </mat-list-item>
-      
-       
-       </mat-list>
-   
+      <mat-card-title>Comments</mat-card-title>
+      <mat-list-item *ngFor="let comment of dish.comments">
+        <h4 matLine>{{comment.comment}}</h4>
+        <p matLine>{{comment.rating}} Stars</p>
+        <p matLine>--{{comment.author}} {{comment.date }}</p>
+      </mat-list-item>
+
+
+    </mat-list>
+    <div fxFlex [hidden]="dish">
+      <mat-spinner></mat-spinner>
+      <h4>Loading .............Please Wait</h4>
+    </div>
+
   </div>
 
 </div>

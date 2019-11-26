@@ -1,25 +1,25 @@
-<div class="container"
-  fxlayout="column"
-  fxlayoutGap="10px">
-<div fxFlex>
-   <h1>Menu</h1>
-    <hr> 
+<div class="container" fxlayout="column" fxlayoutGap="10px">
+  <div fxFlex>
+    <h3>Menu</h3>
+    <hr>
+  </div>
 </div>
-<div fxFlex>
-    <mat-grid-list cols="2" rowHeight="200px" >
-        <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
-    <img  height="200px" src={{dish.image}} alt={{dish.name}}>
-    <mat-grid-tile-footer>
-    <h1 matLine>{{dish.name |uppercase}}</h1>
-    <p matLine>
-          <span>{{dish.description}}</span>
-    </p>
-    </mat-grid-tile-footer>
-    </mat-grid-tile>
-   </mat-grid-list>
+<div class="container" fxlayout="column" fxlayoutGap="10px">
+  <div fxFlex *ngIf="dishes">
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
+        <img height="200px" src={{dish.image}} alt={{dish.name}}>
+        <mat-grid-tile-footer>
+          <h1 matLine>{{dish.name |uppercase}}</h1>
+          <p matLine>
+            <span>{{dish.description}}</span>
+          </p>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div fxFlex [hidden]="dishes">
+    <mat-spinner></mat-spinner>
+    <h4>Loading .............Please Wait</h4>
+  </div>
 </div>
-
-
-</div>
- 
-
