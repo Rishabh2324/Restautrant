@@ -8,13 +8,13 @@ import {PROMOTION} from '../shared/promotions';
 export class PromotionService {
 
   constructor() {}
-  getPromotions() : Promotion [] {
-    return PROMOTION;
+  getPromotions() : Promise<Promotion []> {
+    return Promise.resolve(PROMOTION);
   }
-  getPromotion (id:string) :Promotion {
-    return PROMOTION.filter ((promo) => (promo.id ==id))[0];
+  getPromotion (id:string) :Promise<Promotion> {
+    return  Promise.resolve(PROMOTION.filter ((promo) => (promo.id ==id))[0]);
   }
-  getFeaturedPromotion () : Promotion {
-    return PROMOTION.filter ((promo) => promo.featured)[0];
+  getFeaturedPromotion () : Promise<Promotion> {
+    return  Promise.resolve(PROMOTION.filter ((promo) => promo.featured)[0]);
   } 
 }

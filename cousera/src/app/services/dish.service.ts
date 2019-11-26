@@ -7,14 +7,14 @@ import {DISHES} from '../shared/dishes';
 export class DishService {
 
   constructor() { }
-  getDishes() : Dish [] {
-    return DISHES;
+  getDishes() : Promise<Dish []> {   //Here promise is gitven to the Dish arrar if thrpromise resolves then Dish arrary will be displayed
+    return Promise.resolve(DISHES);   //this output will be shown if the problem is resolved
   }
-  getDish (id:string) :Dish {
-    return DISHES.filter ((dish) => (dish.id ==id))[0];
+  getDish (id:string) :Promise<Dish> {
+    return  Promise.resolve(DISHES.filter ((dish) => (dish.id ==id))[0]);
   }
-  getFeaturedDish () : Dish {
-    return DISHES.filter ((dish) => dish.featured)[0];
+  getFeaturedDish () : Promise<Dish> {
+    return  Promise.resolve(DISHES.filter ((dish) => dish.featured)[0]);
   } 
 }
 
