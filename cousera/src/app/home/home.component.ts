@@ -21,11 +21,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.dishService.getFeaturedDish()
-      .then((dish => this.dish = dish))                        //here dishes objects comesin when the promise resolves then the result is declared 
+      .subscribe((dish => this.dish = dish))                        //here dishes objects comesin when the promise resolves then the result is declared 
     this.promotionService.getFeaturedPromotion()
-      .then((promotion => this.promotion = promotion))
+      .subscribe((promotion => this.promotion = promotion))
     this.leaderService.getFeaturedLeader()
-      .then((leader => this.leader = leader))
+      .subscribe((leader => this.leader = leader))
   }
 
 }
